@@ -1,0 +1,517 @@
+@use 'index.scss' as *;
+
+.section__right{
+    width:9rem;
+    background-color:$color-000000;
+    @include position(fixed, $top:0, $right:0);
+    height:100%;
+    color:$color-ffffff;
+    font-size:1.4rem;
+    padding:3rem 0;
+    z-index:0;
+    @include for-mobile{
+      display:none;
+    }
+    li{
+        padding:0 2rem;
+        writing-mode:tb;
+        width:100%;
+        display:flex;
+        align-items:center;
+        &:after{
+            content:'|';
+            padding:2rem 0;
+        }
+        &:last-child{
+            &:after{
+                display:none;
+            }
+        }
+    }
+}
+.searchicon{
+    width:2rem;
+    height:2rem;
+    background-image:url(/images/search_white_icon.svg);
+}
+// section 1 css
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100svh;
+    @include for-ipadPortrait{
+        height:500px;
+    }
+    @include for-mobile{
+        padding:3rem;
+    }
+    &__inner{
+        max-width:62.6rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        @include fadeUp;
+        @include for-mobile{
+            max-width:100%;
+        }
+        ul{
+            display:flex;
+            background-color:$color-ffffff;
+            padding:1rem;
+            align-items:center;
+        }
+        li{
+            font-size:1.2rem;
+            color:$color-777777;
+            @include for-mobile{
+                font-size:2.2rem;
+            }
+            &:after{
+                content:'-';
+                padding:0 .5rem;
+            }
+            &:last-child{
+                color:$color-000000;
+                &:after{
+                    display:none;
+                }
+            }
+        }
+        h4{
+            font-size:4.2rem;
+        }
+        h1{
+            font-size:6rem;
+            text-align:center;
+            line-height:8rem;
+            @include for-mobile{
+                line-height:normal;
+            }
+        }
+    }
+}
+
+// section 2 css
+.highlight{
+    display:grid;
+    grid-template-columns:repeat(5, 29.5rem);
+    grid-gap:1.5rem;
+    z-index:1;
+    @include for-mobile{
+        grid-template-columns:repeat(2, 25rem);
+    }
+    figure{
+        height:32.0rem;
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+        flex-direction:column;
+        background-color:$color-ffffff;
+        @include box-shadow(.5rem, .5rem, .9rem, rgba(0,0,0,0.1));
+        padding:.5rem;
+        @include for-mobile{
+            height:25rem;
+        }
+        img{
+            width:5rem;
+            height:4rem;
+        }
+    }
+    figcaption{
+        font-size:1.8rem;
+    }
+}
+.bg{
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    &__1{
+        width:33.6rem;
+        height:48.1rem;
+        background-image:url(/images/left-circle-bg.png);
+        @include position(absolute, $left:3rem, $bottom:3rem);
+    }
+    &__2{
+        width:53.7rem;
+        height:58.1rem;
+        background-image:url(/images/right-circle-bg.png);
+        @include position(absolute, $right:0, $top:3rem);
+    }
+}
+
+// section 4 css
+.stories{
+    &__content{
+        margin-top:10rem;
+        flex:1 1 50%;
+        width:50%;
+        max-width:75rem;
+        @include for-mobile{
+            margin-top:5rem;
+        }
+        p{
+            font-size:1.4rem;
+            @include for-mobile{
+                font-size:1.8rem;
+                margin-top:5rem;
+            }
+        }
+    }
+}
+.thumbnailwrap{
+    flex:1 1 50%;
+    width:50%;
+    display:flex;
+    align-items:end;
+    flex-direction:column;
+    @include for-mobile{
+        display:none;
+    }
+    &__top, &__bottom{
+        display:flex;
+        flex-direction:row;
+        > div{
+            img{
+                width:45.0rem;
+            }
+        }
+    }
+    &__content{
+        position:relative;
+    }
+}
+.employee{
+    @extend .p-3;
+    @include position(absolute, $left:0, $top:0);
+    height:100%;
+    width:100%;
+    color:$color-ffffff;
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:space-between;
+    strong{
+        font-size:1.2rem;
+        background-color:$color-000000;
+        padding:1rem;
+        width:14rem;
+        text-align:center;
+    }
+    p{
+        font-size:1.8rem;
+        margin-bottom:2rem;
+    }
+    a{
+        font-size:1.6rem;
+        &:after{
+            content:'\25BA';
+            margin-left:1rem;
+        }
+    }
+}
+
+// section 5 css
+.community{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    margin-top:5rem;
+    flex-direction:row;
+    @include for-mobile{
+        flex-direction:column;
+    }
+    &__title{
+        font-size:2.4rem;
+        @include for-mobile{
+            font-size:3.2rem;
+        }
+    }
+    &__box{
+        background-color:$color-f9f9f9;
+        padding:5rem 5rem 0;
+        max-width:42.0rem;
+        height:52.2rem;
+        width:100%;
+        text-align:center;
+        margin:0 1rem;
+        position:relative;
+        @include for-mobile{
+            max-width:85%;
+            margin-bottom:3rem;
+            padding:3rem;
+        }
+    }
+    &__content{
+        &__left{
+            width:30rem;
+            height:20rem;
+            background-image:url(/images/programs.png);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            background-position:bottom center;
+            display:block;
+            @include position(absolute, $left:50%, $bottom:0);
+            transform:translateX(-50%);
+        }
+        &__right{
+            width:30rem;
+            height:20rem;
+            background-image:url(/images/events.png);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            background-position:bottom center;
+            display:block;
+            @include position(absolute, $left:50%, $bottom:0);
+            transform:translateX(-50%);
+        }
+        p{
+            font-size:1.4rem;
+            padding:3rem 0 4rem;
+            @include for-mobile{
+                font-size:1.8rem;
+            }
+        }
+    }
+    a{
+        font-size:1.4rem;
+        @include for-mobile{
+            font-size:1.8rem;
+        }
+    }
+}
+
+// section 6 css
+.csr{
+    max-width:86.0rem;
+    margin-left:10rem;
+    text-align:left;
+    @include for-mobile{
+        margin-left:0;
+        max-width:100%;
+    }
+    &__title{
+        font-size:2.4rem;
+        margin-bottom:5rem;
+        margin-left:10rem;
+        text-align:left;
+        @include for-mobile{
+            margin-left:0;
+            text-align:center;
+            font-size:3.4rem;
+        }
+    }
+    &__slider{
+        margin-left:10rem;
+        height:170px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        position:relative;
+        -webkit-overflow-scrolling:touch;
+        width:100%;
+        @include for-mobile{
+            margin:0;
+        }
+    }
+}
+.slides{
+    font-size:0;
+    overflow:hidden;
+    overflow-x:scroll;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    white-space:nowrap;
+    width:100%;
+    padding-right:10rem;
+    position:relative;
+    height:200px;
+    @include for-mobile{
+        padding-right:0;
+    }
+    > figure{
+        width:160px;
+        height:160px;
+        display:inline-flex;
+        background-color:$color-ffffff;
+        margin-right:2rem;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        padding:1rem;
+        transition:transform 1s;
+        @include position(absolute, $left:0, $top:0);
+        @include box-shadow(.5rem, .5rem, .9rem, rgba(0,0,0,0.1));
+        img{
+            width:5rem;
+            height:5rem;
+        }
+    }
+    figcaption{
+        font-size:1.4rem;
+    }
+}
+.button{
+    &__wrap{
+        background-color:$color-e61d2b;
+        display:inline-flex;
+        align-items:center;
+        flex-wrap:wrap;
+        height:7rem;
+        justify-content:center;
+        width:20rem;
+        margin-left:10rem;
+    }
+    &__left, &__right{
+        flex:0 0 30%;
+        margin:0 2rem;
+        width:7rem;
+        height:1rem;
+        background-image:url(/images/arrow.png);
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        background-color:transparent;
+        border:0;
+        cursor:pointer;
+    }
+    &__right{
+        transform:rotate(180deg);
+    }
+    &__submit{
+        background-color:$color-e61d2b;
+        height:6.5rem;
+        width:18.0rem;
+        margin-top:2rem;
+    }
+}
+
+// section 7 css
+.sayhello{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:0 0 0 10rem;
+    @include for-mobile{
+        padding:0;
+    }
+    h2{
+        margin-top:5rem;
+        @include for-mobile{
+            margin:0;
+        }
+    }
+    &__left, &__right{
+        flex:0 0 50%;
+        width:50%;
+        height:100svh;
+        @include for-ipadPortrait{
+            height:500px;
+        }
+        display:inline-flex;
+        flex-direction:column;
+        @include for-mobile{
+            height:auto;
+            flex:0 0 100%;
+            width:100%; 
+        }
+    }
+    &__right{
+        background-image:url(/images/10.png);
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        @include for-mobile{
+            display:none;
+        }
+    }
+}
+.address{
+    font-style:normal;
+    max-width:27.5rem;
+    margin-top:6rem;
+    text-align:left;
+    @include for-mobile{
+        max-width:100%;
+        text-align:center;
+    }
+    &__title{
+        font-size:1.8rem;
+        background-color:$color-eeeeee;
+        display:inline-block;
+        padding:1rem;
+        @include for-mobile{
+            font-size:2.4rem;
+        }
+    }
+    &__subtitle{
+        font-size:1.8rem;
+        margin:3rem 0;
+        @include for-mobile{
+            font-size:2.4rem;
+        }
+    }
+    &__content{
+        font-size:1.4rem;
+        color:$color-777777;
+        @include for-mobile{
+            font-size:1.8rem;
+        }
+    }
+}
+.form{
+    @include position(absolute, $left:50%, $top:50%);
+    transform:translate(-50%, -50%);
+    width:46.0rem;
+    @include for-mobile{
+        position:relative;
+        top:unset;
+        left:unset;
+        width:100%;
+        transform:translate(0,0);
+        margin-top:5rem;
+    }
+    &__query{
+        width:26.0rem;
+        height:7rem;
+        background-color:$color-006fba;
+        display:inline-flex;
+        font-size:1.6rem;
+        align-items:center;
+        justify-content:center;
+        @include for-mobile{
+            font-size:2rem;
+        }
+    }
+    &__wrap{
+        background-color:$color-1e2739;
+        padding:5rem 5rem 10rem;
+    }
+    &__input{
+        display:flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        position:relative;
+        margin-bottom:2rem;
+        padding-top:2rem;
+    }
+    &__label{
+        font-size:1.2rem;
+        @include position(absolute, $left:0, $top:2rem);
+        @include transition(all .2s ease-in-out);
+        @include for-mobile{
+            font-size:1.8rem;
+        }
+    }
+    &__inputtext{
+        background-color:transparent;
+        border:none;
+        border-bottom:.1rem solid $color-ffffff;
+        resize:none;
+        padding-bottom:.5rem;
+        &:focus, &:valid{
+            ~ .form__label{
+                top:-.3rem;
+            }
+        }
+    }
+}

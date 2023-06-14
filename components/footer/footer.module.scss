@@ -1,0 +1,91 @@
+@use '././styles/index.scss' as *;
+
+.footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+    @include for-mobile{
+        nav:has(.nav__list){
+            display:none;
+        }
+    }
+    .nav__list{
+        color:$color-000000;
+        font-size:1.4rem;
+        padding:0 2rem;
+    }
+    &__nav{
+        margin-top:7rem;
+        @include for-mobile{
+            margin-top:2rem;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+        }
+        a{
+            font-size:1.2rem;
+            padding:0 1rem;
+            @include for-mobile{
+                font-size:1.8rem;
+                padding:2rem 0;
+            }
+        }
+    }
+    &__copyright{
+        font-size:1.2rem;
+        margin:6rem 0;
+        @include for-mobile{
+            font-size:2rem;
+        }
+    }
+    &__text{
+        font-size:1.2rem;
+        max-width:56.0rem;
+        text-align:center;
+        @include for-mobile{
+            font-size:1.8rem;
+        }
+    }
+    &__strong{
+        font-size:1.2rem;
+        margin:6rem 0;
+        @include for-mobile{
+            margin-bottom:0;
+            font-size:1.8rem;
+        }
+    }
+}
+.social{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:7rem;
+    @include for-mobile{
+        margin-top:0;
+    }
+    a{
+        width:4rem;
+        height:4rem;
+        background-color:$color-e5e5e5;
+        opacity:.5;
+        @include border-radius(10rem);
+        @include transition(all .5s linear);
+        display:inline-flex;
+        margin:0 1rem;
+        justify-content:center;
+        align-items:center;
+        @include for-mobile{
+            width:6rem;
+            height:6rem;
+        }
+        &:hover{
+            opacity:1;
+        }
+        img{
+            width:2rem;
+            height:2rem;
+        }
+    }
+}
